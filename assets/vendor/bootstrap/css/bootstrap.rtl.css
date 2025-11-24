@@ -703,11 +703,12 @@ progress {
 .blockquote-footer::before {
   content: "— ";
 }
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
+.portfolio-item .portfolio-content img {
+  width: 100%;
+  height: 250px; /* تقدري تزودي أو تقللي حسب رغبتك */
+  object-fit: cover;
 }
+
 
 .img-thumbnail {
   padding: 0.25rem;
