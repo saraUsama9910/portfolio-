@@ -1,41 +1,37 @@
-<?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+<form action="https://formsubmit.co/sarausama80@gmail.com" method="POST" class="php-email-form">
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+  <!-- تعطيل الكابتشا -->
+  <input type="hidden" name="_captcha" value="false">
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+  <!-- صفحة التحويل بعد الإرسال (غيريها لو عايزة) -->
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  <!-- عنوان الإيميل اللي تستلمي عليه (اختياري لو انتي عايزة تغيري) -->
+  <input type="hidden" name="_subject" value="New Message From Portfolio Website">
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+  <!-- اسم المرسل -->
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+    </div>
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+    <!-- إيميل المرسل -->
+    <div class="col-md-6 form-group">
+      <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
+    </div>
+  </div>
 
-  echo $contact->send();
-?>
+  <!-- العنوان -->
+  <div class="form-group mt-3">
+    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+  </div>
+
+  <!-- الرسالة -->
+  <div class="form-group mt-3">
+    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+  </div>
+
+  <!-- الزر -->
+  <div class="text-center mt-3"><button type="submit">Send Message</button></div>
+
+</form>
