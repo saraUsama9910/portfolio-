@@ -45,12 +45,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  (function() {
-    emailjs.init("tPpJIEkeUTVcJd-9U"); // YOUR PUBLIC KEY
-  })();
+  emailjs.init("tPpJIEkeUTVcJd-9U"); // ضع ال PUBLIC KEY الصحيح هنا
 
   function sendMail(event) {
-    event.preventDefault(); // Prevent refresh
+    event.preventDefault();
 
     const params = {
       name: document.getElementById("name").value,
@@ -65,8 +63,8 @@
         document.getElementById("contactForm").reset();
       })
       .catch((err) => {
-        console.log(err);
-        alert("✖ Failed to send message. Please try again.");
+        console.log("❌ EmailJS Error:", err);
+        alert("Failed to send message. Check your EmailJS keys.");
       });
   }
 </script>
