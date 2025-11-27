@@ -1,37 +1,29 @@
-<form action="https://formsubmit.co/sarausama80@gmail.com" method="POST" class="php-email-form">
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // استقبال البيانات من الفورم مع تعقيمها
+    $name = htmlspecialchars(strip_tags($_POST['name']));
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $subject = htmlspecialchars(strip_tags($_POST['subject']));
+    $message = htmlspecialchars(strip_tags($_POST['message']));
 
-  <!-- تعطيل الكابتشا -->
-  <input type="hidden" name="_captcha" value="false">
+    // الايميل اللي هيستقبل الرسائل
+    $to = "sarausama80@gmail.com";
 
-  <!-- صفحة التحويل بعد الإرسال (غيريها لو عايزة) -->
-  <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+    // تجهيز الرسالة
+    $body = "Name: $name\n";
+    $body .= "Email: $email\n";
+    $body .= "Message:\n$message\n";
 
-  <!-- عنوان الإيميل اللي تستلمي عليه (اختياري لو انتي عايزة تغيري) -->
-  <input type="hidden" name="_subject" value="New Message From Portfolio Website">
+    // الهيدرز
+    $headers = "From: $name <$email>";
 
-  <!-- اسم المرسل -->
-  <div class="row">
-    <div class="col-md-6 form-group">
-      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-    </div>
-
-    <!-- إيميل المرسل -->
-    <div class="col-md-6 form-group">
-      <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
-    </div>
-  </div>
-
-  <!-- العنوان -->
-  <div class="form-group mt-3">
-    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-  </div>
-
-  <!-- الرسالة -->
-  <div class="form-group mt-3">
-    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-  </div>
-
-  <!-- الزر -->
-  <div class="text-center mt-3"><button type="submit">Send Message</button></div>
-
-</form>
+    // ارسال الايميل
+    if(mail($to, $subject, $body, $headers)) {
+        echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Sorry, your message could not be sent. Please try again later.']);
+    }
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
+}
+?>
