@@ -73,47 +73,27 @@
     container.innerHTML = "<p>No images found for this project.</p>";
   }
 </script>
-<script src="js/sendmail.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script src="js/sendmail.js"></script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-    // Initialize EmailJS
-    (function () {
-        emailjs.init("cY8rlz3S3YeNZAOgj"); // Replace with your EmailJS public key
-    })();
+  emailjs.init("tPpJIEkeUTVcJd-9U");
 
-    function sendMail() {
-        const serviceID = "service_ja30roe"; // Replace with your EmailJS service ID
-        const templateID = "template_5rao0j2"; // Replace with your EmailJS template ID
+  function sendMail(event) {
+    event.preventDefault();
 
-        // Collect form data
-        const params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
-            message: document.getElementById("message").value,
-        };
+    const params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
 
-        // Send the email
-        emailjs.send(serviceID, templateID, params)
-            .then(response => {
-                alert("Message sent successfully!");
-                document.getElementById("contactForm").reset(); // Clear the form
-            })
-            .catch(error => {
-                console.error("Error sending email:", error);
-                alert("Failed to send message. Please try again.");
-            });
-    }
+    emailjs.send("service_t6ljaze", "template_flzq5x6", params)
+      .then(() => alert("✔️ تم إرسال الرسالة بنجاح"))
+      .catch((err) => alert("❌ حدث خطأ: " + err));
+  }
 </script>
-
-
-
-
 
 
 
@@ -788,58 +768,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 
 
           </div><!-- End Contact Form -->
-
-
-
-
-
-
-
-
-
-
-<!-- test -->
-<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-light rounded p-5">
-                        <!-- <p class="d-inline-block border rounded-pill py-1 px-2">Contact Us</p> -->
-                        <h1 class="mb-4">Do you have any query Please Contact Us!</h1>
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-primary w-100 py-3" onclick="sendMail()">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- end test  -->
-
-
-
 
         </div>
 
