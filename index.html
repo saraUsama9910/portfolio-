@@ -744,12 +744,7 @@ Each project reflects my passion for building clean, modern, and user-focused di
 </form>
  </div><!-- End Contact Form -->
 
-<form onsubmit="sendMail(event)">
-  <input type="text" id="name" placeholder="Your Name" required>
-  <input type="email" id="email" placeholder="Your Email" required>
-  <textarea id="message" placeholder="Message" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
+
         </div>
 
       </div>
@@ -782,7 +777,7 @@ Each project reflects my passion for building clean, modern, and user-focused di
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-  emailjs.init("V7TfOoWuQueI9Fd5t"); // حطي الـ Public Key بتاعك
+  emailjs.init("tPpJIEkeUTVcJd-9U"); // حطي الـ Public Key بتاعك
 
   const form = document.getElementById("contactForm");
   const loading = document.querySelector(".loading");
@@ -804,7 +799,7 @@ Each project reflects my passion for building clean, modern, and user-focused di
       message: document.getElementById("message-field").value,
     };
 
-    emailjs.send("service_l2wi5sk", "template_1nuvshe", params) // حطي Service/Template IDs بتوعك
+    emailjs.send("service_t6ljaze", "template_flzq5x6", params)
       .then(() => {
         loading.style.display = "none";
         successMsg.style.display = "block";
