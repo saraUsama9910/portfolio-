@@ -11,7 +11,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+ 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -77,33 +77,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  emailjs.init("tPpJIEkeUTVcJd-9U");
 
-  function sendMail(event) {
-    event.preventDefault();
-
-    const params = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
-
-    emailjs.send("service_t6ljaze", "template_flzq5x6", params)
-      .then(() => alert("✔️ تم إرسال الرسالة بنجاح"))
-      .catch((err) => alert("❌ حدث خطأ: " + err));
-  }
-</script>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function() {
-      emailjs.init("tPpJIEkeUTVcJd-9U"); 
-  })();
-</script>
 
 <body class="index-page">
 
