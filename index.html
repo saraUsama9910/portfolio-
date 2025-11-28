@@ -85,15 +85,13 @@
 
     const params = {
       name: document.getElementById("name").value,
-      email: document.getElementById("email").value,     
-       subject: document.getElementById("subject").value,
-
+      email: document.getElementById("email").value,
       message: document.getElementById("message").value
     };
 
     emailjs.send("service_t6ljaze", "template_flzq5x6", params)
-      .then(() => alert("✔️Your Message Sent Successfully"))
-      .catch((err) => alert("❌  There is error Try again: " + err));
+      .then(() => alert("✔️ تم إرسال الرسالة بنجاح"))
+      .catch((err) => alert("❌ حدث خطأ: " + err));
   }
 </script>
 
