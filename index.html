@@ -95,6 +95,48 @@
   }
 </script> -->
 
+<!-- Success Popup -->
+<div id="successPopup" style="
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: none;
+  text-align: center;
+  z-index: 9999;
+">
+  <h3 style="margin-bottom: 10px; color: #28a745;">✔ Message Sent Successfully</h3>
+  <p>Your message has been delivered. Thank you!</p>
+  <button onclick="closePopup()" style="
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+  ">OK</button>
+</div>
+
+<!-- Popup Background -->
+<div id="popupBg" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 9998;
+"></div>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <!-- <script>
@@ -824,20 +866,29 @@ Each project reflects my passion for building clean, modern, and user-focused di
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-  emailjs.init("tPpJIEkeUTVcJd"); // حطي الـ Public Key بتاعك
+  emailjs.init("tPpJIEkeUTVcJd"); // Public Key
 
   const form = document.getElementById("contactForm");
   const loading = document.querySelector(".loading");
   const errorMsg = document.querySelector(".error-message");
-  const successMsg = document.querySelector(".sent-message");
+
+  function showPopup() {
+    document.getElementById("successPopup").style.display = "block";
+    document.getElementById("popupBg").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("successPopup").style.display = "none";
+    document.getElementById("popupBg").style.display = "none";
+  }
+
+  window.closePopup = closePopup;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Show loading
     loading.style.display = "block";
     errorMsg.style.display = "none";
-    successMsg.style.display = "none";
 
     const params = {
       name: document.getElementById("name-field").value,
@@ -846,15 +897,13 @@ Each project reflects my passion for building clean, modern, and user-focused di
       message: document.getElementById("message-field").value,
     };
 
-    emailjs.send("service_t6ljaze", "template_flzq5x6", params) // حطي Service/Template IDs بتوعك
+    emailjs.send("service_t6ljaze", "template_flzq5x6", params)
       .then(() => {
         loading.style.display = "none";
-        successMsg.style.display = "block";
-        successMsg.innerHTML = "Your message has been sent. Thank you!";
-
         form.reset();
+        showPopup(); // 💚 هنا بنفتح الـ Popup
       })
-      .catch((error) => {
+      .catch(() => {
         loading.style.display = "none";
         errorMsg.style.display = "block";
         errorMsg.innerHTML = "Error sending message. Please try again.";
