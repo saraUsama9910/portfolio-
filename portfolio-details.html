@@ -1,292 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio Details - iPortfolio Bootstrap Template</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-</head>
+  <body class="portfolio-details-page">
+    <!-- HEADER — unchanged -->
+    <header id="header" class="header dark-background d-flex flex-column">
+      <i class="header-toggle d-xl-none bi bi-list"></i>
 
-<body class="portfolio-details-page">
-
-  <!-- HEADER — unchanged -->
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Sara Osama</h1>
-    </a>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
-          </ol>
-        </nav>
+      <div class="profile-img">
+        <img
+          src="assets/img/my-profile-img.jpg"
+          alt=""
+          class="img-fluid rounded-circle"
+        />
       </div>
-    </div>
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+      <a
+        href="index.html"
+        class="logo d-flex align-items-center justify-content-center"
+      >
+        <h1 class="sitename">Sara Osama</h1>
+      </a>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="index.html"><i class="bi bi-house navicon"></i>Home</a>
+          </li>
+          <li>
+            <a href="index.html#about"
+              ><i class="bi bi-person navicon"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="index.html#resume"
+              ><i class="bi bi-file-earmark-text navicon"></i> Resume</a
+            >
+          </li>
+          <li>
+            <a href="index.html#portfolio"
+              ><i class="bi bi-images navicon"></i> Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="index.html#contact"
+              ><i class="bi bi-envelope navicon"></i> Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <!-- IMAGES WILL BE INSERTED BY JAVASCRIPT -->
-              <div class="swiper-wrapper align-items-center" id="dynamic-images"></div>
-
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul id="project-info">
-                <!-- JS will change this content -->
-              </ul>
-            </div>
-
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2 id="project-title">Project Title</h2>
-              <p id="project-description">
-                <!-- JS will change this content -->
-              </p>
-            </div>
-          </div>
-
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background">
+        <div
+          class="container d-lg-flex justify-content-between align-items-center"
+        >
+          <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">Portfolio Details</li>
+            </ol>
+          </nav>
         </div>
-
       </div>
 
-    </section>
+      <!-- Portfolio Details Section -->
+      <section id="portfolio-details" class="portfolio-details section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
 
-  </main>
+                <!-- IMAGES WILL BE INSERTED BY JAVASCRIPT -->
+                <div
+                  class="swiper-wrapper align-items-center"
+                  id="dynamic-images"
+                ></div>
 
-  
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+            <div class="col-lg-4">
+              <div
+                class="portfolio-info"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3>Project information</h3>
+                <ul id="project-info">
+                  <!-- JS will change this content -->
+                </ul>
+              </div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+              <div
+                class="portfolio-description"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h2 id="project-title">Project Title</h2>
+                <p id="project-description">
+                  <!-- JS will change this content -->
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- 🔥🔥 DYNAMIC PROJECT LOADER SCRIPT 🔥🔥 -->
-<script>
-  // Read project id from URL
-  const params = new URLSearchParams(window.location.search);
-  const projectId = params.get("id");
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-  // All project data
-  const projects = {
-    project1: {
-      images: [
-        "assets/img/portfolio/app-1.jpg",
-        "assets/img/portfolio/app-2.jpg",
-        "assets/img/portfolio/app-3.jpg",
-        "assets/img/portfolio/app-4.jpg",
-        "assets/img/portfolio/app-5.jpg",
-         "assets/img/portfolio/app-6.jpg",
-        "assets/img/portfolio/app-7.jpg",
-      ],
-      title: "E-Commerce Sports Website",
-      description: "A modern e-commerce platform built with clean UI...",
-      info: `
+    <!-- 🔥🔥 DYNAMIC PROJECT LOADER SCRIPT 🔥🔥 -->
+    <script>
+      // Read project id from URL
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get("id");
+
+      // All project data
+      const projects = {
+        project1: {
+          images: [
+            "assets/img/portfolio/app-1.jpg",
+            "assets/img/portfolio/app-2.jpg",
+            "assets/img/portfolio/app-3.jpg",
+            "assets/img/portfolio/app-4.jpg",
+            "assets/img/portfolio/app-5.jpg",
+            "assets/img/portfolio/app-6.jpg",
+            "assets/img/portfolio/app-7.jpg",
+          ],
+          title: "E-Commerce Sports Website",
+          description: "A modern e-commerce platform built with clean UI...",
+          info: `
         <li><strong>Category</strong>: Web Design</li>
         <li><strong>Client</strong>: Geogrove</li>
         <li><strong>Project date</strong>: 2024</li>
         <li><strong>Project URL</strong>: <a href="https://sara-12345901.myshopify.com/">www.geogrove.com</a></li>
-      `
-    },
-    project2: {
-      images: [
-        "assets/img/portfolio/product-1.jpg",
-        "assets/img/portfolio/product-2.jpg",
-        "assets/img/portfolio/product-3.jpg",
-        "assets/img/portfolio/product-4.jpg",
-        "assets/img/portfolio/product-5.jpg",
-        "assets/img/portfolio/product-6.jpg"      ],
-      title: "Amazon E-Commerce Website",
-      description: "Brand identity, colors, product presentations...",
-      info: `
+      `,
+        },
+        project2: {
+          images: [
+            "assets/img/portfolio/product-1.jpg",
+            "assets/img/portfolio/product-2.jpg",
+            "assets/img/portfolio/product-3.jpg",
+            "assets/img/portfolio/product-4.jpg",
+            "assets/img/portfolio/product-5.jpg",
+            "assets/img/portfolio/product-6.jpg",
+          ],
+          title: "Amazon E-Commerce Website",
+          description: "Brand identity, colors, product presentations...",
+          info: `
         <li><strong>Category</strong>: Amazone Clone</li>
         <li><strong>Project date</strong>: Oct 2025</li>
         <li><strong>Project URL</strong>: <a href="https://clone-7fd8c.web.app/">www.Amazon.com</a></li>
-      `
-    },
-    project3: {
-      images: [
-        "assets/img/portfolio/mo1.jpg",
-        "assets/img/portfolio/mo2.jpg",
-        "assets/img/portfolio/mo3.jpg",
-        "assets/img/portfolio/mo4.jpg",
-        "assets/img/portfolio/mo5.jpg",
-        "assets/img/portfolio/mo6.jpg",
-        "assets/img/portfolio/mo7.jpg",
-        "assets/img/portfolio/mo8.jpg",
-        "assets/img/portfolio/mo9.jpg",
-        "assets/img/portfolio/mo10.jpg",
-        "assets/img/portfolio/mo11.jpg"
-
-
-      ],
-      title: "Responsive UI Design",
-      description: "Responsive UI For All Screens...",
-      info: `
+      `,
+        },
+        project3: {
+          images: [
+            "assets/img/portfolio/mo1.jpg",
+            "assets/img/portfolio/mo2.jpg",
+            "assets/img/portfolio/mo3.jpg",
+            "assets/img/portfolio/mo4.jpg",
+            "assets/img/portfolio/mo5.jpg",
+            "assets/img/portfolio/mo6.jpg",
+            "assets/img/portfolio/mo7.jpg",
+            "assets/img/portfolio/mo8.jpg",
+            "assets/img/portfolio/mo9.jpg",
+            "assets/img/portfolio/mo10.jpg",
+            "assets/img/portfolio/mo11.jpg",
+          ],
+          title: "Responsive UI Design",
+          description: "Responsive UI For All Screens...",
+          info: `
         <li><strong>Category</strong>: UI </li>
         <li><strong>Project date</strong>: Aug 2024</li>
         <li><strong>Project URL</strong>: <a href="https://github.com/saraUsama9910/responsive-ui">www.responsive-ui.com</a></li>
-      `
-    },
-    project4: {
-      images: [
-        "assets/img/portfolio/mob1.jpg",
-        "assets/img/portfolio/mob2.jpg",
-        "assets/img/portfolio/mob3.jpg",
-        "assets/img/portfolio/mob4.jpg",
-        "assets/img/portfolio/mob5.jpg",
-        "assets/img/portfolio/mob6.jpg",
-        
-
-      ],
-      title: "Bookly App",
-      description: "bookly app help you find all books you need to read ...",
-      info: `
+      `,
+        },
+        project4: {
+          images: [
+            "assets/img/portfolio/mob1.jpg",
+            "assets/img/portfolio/mob2.jpg",
+            "assets/img/portfolio/mob3.jpg",
+            "assets/img/portfolio/mob4.jpg",
+            "assets/img/portfolio/mob5.jpg",
+            "assets/img/portfolio/mob6.jpg",
+          ],
+          title: "Bookly App",
+          description:
+            "bookly app help you find all books you need to read ...",
+          info: `
         <li><strong>Category</strong>: Bookly App </li>
         <li><strong>Project date</strong>: Jan 2024</li>
         <li><strong>Project URL</strong>: <a href="https://github.com/saraUsama9910/book">www.bookly-app.com</a></li>
-      `
-    },
-     project5: {
-      images: [
-        "assets/img/portfolio/mobi1.jpg",
-        "assets/img/portfolio/mobi2.jpg",
-        "assets/img/portfolio/mobi3.jpg",
-        "assets/img/portfolio/mobi4.jpg",
-        "assets/img/portfolio/mobi15.jpg",
-        "assets/img/portfolio/mobi5.jpg",
-        "assets/img/portfolio/mobi6.jpg",
-        "assets/img/portfolio/mobi7.jpg",
-        "assets/img/portfolio/mobi8.jpg",
-        
-
-      ],
-      title: "Weather App App",
-      description: "Weather App help you to search for any country weather with details ...",
-      info: `
+      `,
+        },
+        project5: {
+          images: [
+            "assets/img/portfolio/mobi1.jpg",
+            "assets/img/portfolio/mobi2.jpg",
+            "assets/img/portfolio/mobi3.jpg",
+            "assets/img/portfolio/mobi4.jpg",
+            "assets/img/portfolio/mobi15.jpg",
+            "assets/img/portfolio/mobi5.jpg",
+            "assets/img/portfolio/mobi6.jpg",
+            "assets/img/portfolio/mobi7.jpg",
+            "assets/img/portfolio/mobi8.jpg",
+          ],
+          title: "Weather App App",
+          description:
+            "Weather App help you to search for any country weather with details ...",
+          info: `
         <li><strong>Category</strong>: Weather App </li>
         <li><strong>Project date</strong>: Mar 2024</li>
         <li><strong>Project URL</strong>: <a href="https://github.com/saraUsama9910/weather-app">www.weather-app.com</a></li>
-      `
-    },
-    project6: {
-      images: [
-        "assets/img/portfolio/1-1.jpg",
-        "assets/img/portfolio/1-2.jpg",
-        "assets/img/portfolio/1-3.jpg",
-        "assets/img/portfolio/1-4.jpg",
-        "assets/img/portfolio/1-5.jpg",
-        
-
-
-      ],
-      title: "Coders Cafe Website",
-      description: " coders cafe website help you to find coding tutorials ...",
-      info: `
+      `,
+        },
+        project6: {
+          images: [
+            "assets/img/portfolio/1-1.jpg",
+            "assets/img/portfolio/1-2.jpg",
+            "assets/img/portfolio/1-3.jpg",
+            "assets/img/portfolio/1-4.jpg",
+            "assets/img/portfolio/1-5.jpg",
+          ],
+          title: "Coders Cafe Website",
+          description:
+            " coders cafe website help you to find coding tutorials ...",
+          info: `
         <li><strong>Category</strong>:  </li>
         <li><strong>Project date</strong>: Jan 2026</li>
         <li><strong>Project URL</strong>: <a href="https://coders-cafes.netlify.app/">www.coders-cafe.com</a></li>
-      `
-    },
+      `,
+        },
+        project7: {
+          images: ["assets/img/portfolio/poster.jpg"],
+          title: "Poster Design",
+          description: " Poster design for marketing purposes ...",
+          info: `
+        <li><strong>Category</strong>:  </li>
+        <li><strong>Project date</strong>: Jan 2026</li>
+        <li><strong>Project URL</strong>: <a href="https://www.canva.com/design/DAGkDVoPwfU/-Lap0ix9I_esXYLtC_-Kvw/edit?utm_content=DAGkDVoPwfU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">www.canva-poster.com</a></li>
+      `,
+        },
+      };
 
-  };
+      // Fallback if wrong id
+      const project = projects[projectId] || projects.project1;
 
-  // Fallback if wrong id
-  const project = projects[projectId] || projects.project1;
-
-  // Fill images
-  const imageBox = document.getElementById("dynamic-images");
-  project.images.forEach(src => {
-    imageBox.innerHTML += `
+      // Fill images
+      const imageBox = document.getElementById("dynamic-images");
+      project.images.forEach((src) => {
+        imageBox.innerHTML += `
       <div class="swiper-slide">
         <img src="${src}" alt="">
       </div>
     `;
-  });
+      });
 
-  // Fill info
-  document.getElementById("project-info").innerHTML = project.info;
+      // Fill info
+      document.getElementById("project-info").innerHTML = project.info;
 
-  // Fill title & description
-  document.getElementById("project-title").innerHTML = project.title;
-  document.getElementById("project-description").innerHTML = project.description;
-</script>
-
-
-</body>
-
+      // Fill title & description
+      document.getElementById("project-title").innerHTML = project.title;
+      document.getElementById("project-description").innerHTML =
+        project.description;
+    </script>
+  </body>
 </html>
